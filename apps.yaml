@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: p99
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: p99
+  destination:
+    name: p99-beamline
+    namespace: p99-beamline
+  source:
+    path: apps
+    repoURL: https://github.com/epics-containers/p99-deployment
+    targetRevision: main
+    helm:
+      version: v3
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
