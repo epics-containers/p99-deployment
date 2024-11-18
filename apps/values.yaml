@@ -8,18 +8,18 @@
 # services should be running on the cluster. It is recommended that this repo
 # be updated by a CI/CD pipeline or configuration tools only.
 
-project: p99
+project: p99-beamline
 destination:
   name: p99-beamline
   namespace: p99-beamline
 source:
   repoURL: https://github.com/epics-containers/p99-services
-  targetRevision: 2024.1.1
+  targetRevision: main
 
 services:
-  # Each item is of the form:
+  # Eeach item is of the form:
   #   service: service name as it appears in K8S (statefulset/deployment name)
-  #     targetRevision: optional override for targetRevision above
+  #     targtRevision: optional override for targetRevision above
   #     repoURL: optional override for git repo to source the helm chart from
   #            the path is always services/<service> within that repo
   #     removed: set to true to remove the service from the cluster
@@ -35,6 +35,6 @@ ec_services:
   #            the path is always services/<service> within that repo
   #     removed: set to true to remove the service from the cluster
   #     enabled: set to false to stop a service
-  p99-ea-test-01:
+  bl99p-ea-tetramm-01:
     enabled: true
-    targetRevision: 2024.1.1
+    targetRevision: 2024.11.4
