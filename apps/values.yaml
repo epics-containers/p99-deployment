@@ -10,7 +10,7 @@
 
 project: p99-beamline
 destination:
-  name: k8s-p99
+  name: p99
   namespace: p99-beamline
 source:
   repoURL: https://github.com/epics-containers/p99-services
