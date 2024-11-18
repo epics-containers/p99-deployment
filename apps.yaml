@@ -5,7 +5,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: p99 # Check this - needs to match project in values.yaml?
+  project: p99-beamline # Check this - needs to match project in values.yaml?
   destination:
     name: argus
     namespace: p99-beamline
